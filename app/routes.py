@@ -12,6 +12,8 @@ from app.database import (
     scan
 )
 
+# route to create new users
+
 @app.route("/users", methods=["POST"]) # decorator
 def create_user():                      # view functions
     user_data = request.json
@@ -25,3 +27,7 @@ def create_user():                      # view functions
         "message: "Success",
         "new_id": new_id
         }
+
+@app.route("/hello")
+def hello():
+    return "Hello Felipe!"
